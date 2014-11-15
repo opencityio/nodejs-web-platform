@@ -1,14 +1,38 @@
 <link rel="stylesheet" href="/components/metro-bootstrap/dist/css/metro-bootstrap.min.css">
 
+<style type="text/css">
+    .poll {
+        padding: 20px 0;
+    }
+    .poll-option-wrap {
+        width: 100%;
+        display: table;
+    }
+    .poll-option-wrap .btn-wrap {
+        display: table-cell;
+    }
+
+    .poll-option-wrap .btn-wrap button.btn {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+</style>
+
 <div class="hack-wrap">
+    <h1>Citizen Vote</h1>
 
     <div class="poll">
-        <h2> {{poll.name}} </h2>
-        <button ng-repeat="(key, value) in poll.options" type="button" class="btn btn-primary btn-lg" ng-click="sendPollData(poll.id, key)">{{value}}</button>
+        <blockquote> {{poll.name}} </blockquote>
+        <div class="poll-option-wrap">
+            <div class="btn-wrap" ng-repeat="(key, value) in poll.options">
+                <button type="button" class="btn btn-primary btn-lg" ng-click="sendPollData(poll.id, key)">{{value}}</button>
+            </div>
+        </div>
 
-        <div><a href="/#/polls/past">Previous Polls</a></div>
+
     </div>
-
+    <div><a href="/#/polls/past">Previous Polls</a></div>
 </div>
 
 <div class="common-menu">

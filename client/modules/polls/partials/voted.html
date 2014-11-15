@@ -34,7 +34,7 @@
     <div class="poll">
         <h2>Voted Poll Title</h2>
         <h3>Results</h3>
-        <h2 class="text-center"> {{poll.name}} </h2>
+        <blockquote> {{poll.name}} </blockquote>
         <div class="chart">
             <div ng-repeat="(key, value) in poll.options" class="poll-result" ng-style="pollResultsHeight(poll.results, key)" ng-class="{'poll-right': $last}">
                 <span class="poll-number">{{poll.results[key]}}</span>
