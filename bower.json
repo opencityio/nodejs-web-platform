@@ -6,6 +6,8 @@
     "fastclick": "~1.0.2",
     "angular-touch": "~1.2.20",
     "angular-route": "~1.2.21",
+    "bootstrap": "*",
+    "font-awesome":"*",
     "bootstrap-sass-official": "~3.2.0",
     "es5-shim": "~4.0.3",
     "metro-bootstrap": "*",
