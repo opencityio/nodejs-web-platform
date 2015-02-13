@@ -9,5 +9,4 @@ dashboard.config(['$routeProvider', function($routeProvider){
 		templateUrl: '/modules/dashboard/partials/menu.html',
 		controller: 'dashboardMenuController'
 	});
-
-}]);
+} ] );

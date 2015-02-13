@@ -1,7 +1,6 @@
 dashboard.controller('dashboardMenuController', ['$scope', 'camCanvas', function($scope, camCanvas){
-	var videoOverlay = document.getElementById("selfie-overlay");
-
-	var selfieButtonCanvas = camCanvas.cloneNode(true);
+	var videoOverlay = document.getElementById("selfie-overlay"),
+			selfieButtonCanvas = camCanvas.cloneNode(true);
 
 	selfieButtonCanvas.setAttribute('width', '400%');
 	selfieButtonCanvas.setAttribute('height', '400%');
@@ -10,6 +9,4 @@ dashboard.controller('dashboardMenuController', ['$scope', 'camCanvas', function
 
 	videoOverlay.appendChild(selfieButtonCanvas);
 	selfieButtonCanvas.play();
-
-
-}]);
+} ] );

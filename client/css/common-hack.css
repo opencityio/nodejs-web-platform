@@ -22,7 +22,30 @@ a, a:visited, a:active {
     background: #cdcdcd;
     font-size: 2em;
 }
+.common-menu nav ul li {
+    background: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 1px 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.common-menu img.feedback-logo {
+    width: 10%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.common-menu nav ul li a {
+  color: #555555;
+}
+.common-menu nav ul li a:hover {
+  border-radius: 5px;
+}
+.common-menu {
+    padding: 10px 0;
+    font-family: 'Open Sans', sans-serif;
+}
 .navbar-feedback {
     margin-right: 15px;
 }
-

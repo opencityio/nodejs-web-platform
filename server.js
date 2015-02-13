@@ -17,7 +17,6 @@ if (process.env.NODE_ENV === 'production') {
   global.newrelic = newrelic;
 }
 
-
 // Load configuration data
 nconf
   .argv()
