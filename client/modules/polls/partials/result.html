@@ -1,0 +1,46 @@
+
+      <style type="text/css">
+          .poll-result {
+              text-align: center;
+              padding: 3px;
+              margin: 5px 0;
+          }
+          .poll-fill {
+              padding: 2px 5px;
+              text-align: left;
+              display: block;
+              background: cornflowerblue;
+              height: 100%;
+          }
+          .chart {
+              position: relative;
+          }
+      </style>
+      <link rel="stylesheet" href="/components/metro-bootstrap/dist/css/metro-bootstrap.min.css">
+
+      <div class="hack-wrap">
+        <div class="poll">
+            <h2>Voted Poll Title</h2>
+            <h3>Results</h3>
+            <blockquote> {{poll.name}} </blockquote>
+            <div class="chart">
+                <div ng-repeat="(key, value) in poll.options" class="poll-result" ng-style="pollResultsPercentage(poll.results, key)">
+                    <span class="poll-fill">{{value}}: <span class="poll-number">{{poll.results[key]}}</span></span>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="common-menu" data-timeout="60">
+          <nav>
+              <ul class="nav navbar-nav">
+                  <li><a href="/#/menu">Home</a></li>
+                  <li><a href="/#/polls">Back to Polls</a></li>
+                  <!-- this is where other Breadcrumb-style nav buttons go -->
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right navbar-feedback">
+                  <li class="pull-right"><a href="/">Give us feedback</a></li>
+              </ul>
+          </nav>
+      </div>
