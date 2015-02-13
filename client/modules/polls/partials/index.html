@@ -14,6 +14,7 @@
     padding: 50px;
     background-color: #eeeeee;
     position: relative;
+    margin-bottom: 30px;
   }
   .quote-box:before, .quote-box:after {
     font-family: 'Adobe Garamond Pro', sans-serif;
@@ -40,6 +41,19 @@
     font-family: 'Open Sans', sans-serif;
     color: #222222;
     line-height: 80px;
+  }
+  .quote-box .poll-goto {
+      float: right;
+      background: #00d0fc;
+      color: #fff;
+      padding: 7px 15px;
+      text-decoration: none;
+      box-shadow: 1px 2px #57919d;
+      border-radius: 5px;
+      font-size: 30px;
+  }
+  .quote-box .poll-goto:hover {
+      background-color: #00B0D6;
   }
 
   .poll-description {
@@ -80,6 +94,9 @@
     border-radius: 5px;
     box-shadow: 1px 4px #57919d;
   }
+  .vote-notice button:hover {
+      background-color: #00B0D6;
+  }
 
   .information {
     text-align: center;
@@ -103,33 +120,18 @@
     </div>
   </div>
 </div>
-</div>
 
 
-<div class="poll">
-    <h2> {{poll.name}} </h2>
-    <button ng-repeat="(key, value) in poll.options" type="button" class="btn btn-primary btn-lg" ng-click="sendPollData(poll.id, key)">{{value}}</button>
-
-    <div><a href="/#/polls/past">Previous Polls</a></div>
-</div>
 <div class="hack-wrap">
-  <div class="col-lg-12">
-    <div class="quote-box">
-      <p class="col-lg-offset-1">If we had to implement cuts, would you prefer to cut either refuse collection or street lighting? (48/64Italic)</p>
+    <div class="poll" ng-repeat="poll in polls">
+      <div class="col-lg-12">
+        <div class="quote-box">
+            <a href="/#/polls/vote/{{poll.id}}" class="poll-goto">View</a>
+          <p class="col-lg-offset-1">{{ poll.name }}</p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="col-lg-8 col-lg-offset-2">
-    <div class="poll-description">
-      <p>This is a specific descripion about this poll. We’ll look to limit this in height with overflow-y so that it sits as a max of 3 lines and no more - that means that the rest of the stuff will {Open Sans Light 18/24}</p>
-    </div>
-  </div>
-
-  <div class="vote-notice col-lg-12">
-    <p>please vote for one of the following to have your say:</p>
-    <button type="button" class="btn btn-default" aria-label="Center Align">Refuse collection(40/64bold)</button>
-    <button type="button" class="btn btn-default" aria-label="Center Align">Street Lighting</button>
-  </div>
 
   <div class="information col-lg-10 col-lg-offset-1">
     <p>Some stuff at the bottom explains what this all about. I guess that Opportunity Peterborough will supply data something here about data and voting and so forth</p>
@@ -140,7 +142,7 @@
 <nav>
   <ul class="nav navbar-nav">
     <li><a href="/#/menu"><i class="fa fa-home"></i> Menu</a></li>
-    <li><a href="/#/menu"><i class="fa fa-arrow-left"></i> Back to current poll</a></li>
+    <li><a href="/#/polls"><i class="fa fa-arrow-left"></i> Back to current poll</a></li>
   </ul>
   <ul class="nav navbar-nav navbar-right navbar-feedback">
       <li class="pull-right"><a href="/"><img class="feedback-logo" src="/assets/btnLogo.jpg"/>Give us feedback</a></li>

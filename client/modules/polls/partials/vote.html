@@ -1,39 +1,142 @@
 <link rel="stylesheet" href="/components/metro-bootstrap/dist/css/metro-bootstrap.min.css">
 
-<style type="text/css">
-    .poll {
-        padding: 20px 0;
+<style>
+    .header-bar {
+        background-image: url('/assets/polls-header.jpg');
+        background-size: 100% 100%;
+        margin-bottom: 1em;
     }
 
-    .poll-option-wrap .btn-wrap {
-        margin: 20px 0;
+    .logo {
+        margin: 15px 0;
     }
-    .poll-option-wrap .btn-wrap button.btn {
-        width: 80%;
-        margin: 0 auto;
+
+    .quote-box {
+        padding: 50px;
+        background-color: #eeeeee;
+        position: relative;
+    }
+    .quote-box:before, .quote-box:after {
+        font-family: 'Adobe Garamond Pro', sans-serif;
+        content: '"';
+    }
+    .quote-box:before {
+        font-size: 150px;
+        position: absolute;
+        top: -20px;
+        left: 45px;
+        color: #dbdbdb;
+    }
+    .quote-box:after {
+        font-size: 150px;
+        position: absolute;
+        bottom: -95px;
+        right: 45px;
+        color: #dbdbdb;
+    }
+    .quote-box p {
+        font-size: 64px;
+        font-style: italic;
+        font-weight: lighter;
+        font-family: 'Open Sans', sans-serif;
+        color: #222222;
+        line-height: 80px;
+    }
+
+    .poll-description {
+        margin-top: 50px;
+        font-weight: 'Open Sans', sans-serif;
         display: block;
+        position: relative;
     }
+    .poll-description p {
+        line-height: 42px;
+        font-size: 32px;
+        font-weight: 300;
+        color: #222222;
+    }
+
+    .vote-notice {
+        margin-top: 70px;
+        margin-bottom: 80px;
+        display: block;
+        position: relative;
+    }
+    .vote-notice p {
+        text-align: center;
+        font-weight: bold;
+        font-size: 29px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+    .vote-notice button {
+        width: 100%;
+        padding: 55px 0px;
+        font-size: 64px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        background: #00d0fc;
+        margin-top: 20px;
+        color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 1px 4px #57919d;
+    }
+
+    .information {
+        text-align: center;
+        margin-bottom: 30px;
+        display: block;
+        position: relative;
+    }
+
+    .information p {
+        font-size: 24px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+    }
+
 </style>
 
-<div class="hack-wrap">
-    <h1>Citizen Vote</h1>
-
-    <div class="poll">
-        <blockquote> {{poll.name}} </blockquote>
-        <div class="poll-option-wrap">
-            <div class="btn-wrap" ng-repeat="(key, value) in poll.options">
-                <button type="button" class="btn btn-primary btn-lg" ng-click="sendPollData(poll.id, key)">{{value}}</button>
-            </div>
+<div class="header-bar col-lg-12">
+    <div class="hack-wrap">
+        <div class="logo col-lg-2">
+            <img class="img-responsive" src="/assets/logo.jpg" />
         </div>
     </div>
-    <div><a href="/#/polls">All Polls</a></div>
-    <div><a href="/#/polls/past">Previous Polls</a></div>
+</div>
+
+<div class="hack-wrap">
+    <div class="col-lg-12">
+        <div class="quote-box">
+            <p class="col-lg-offset-1">{{poll.name}}</p>
+        </div>
+    </div>
+
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="poll-description">
+            <p>{{poll.description}}</p>
+        </div>
+    </div>
+
+    <div class="vote-notice col-lg-12">
+        <p>please vote for one of the following to have your say:</p>
+        <button ng-repeat="(key, value) in poll.options" type="button" class="btn btn-default" aria-label="Center Align" ng-click="sendPollData(poll.id, key)">{{value}}</button>
+    </div>
+
+    <div class="poll-option-wrap">
+    </div>
+
+    <div class="information col-lg-10 col-lg-offset-1">
+        <p>Some stuff at the bottom explains what this all about. I guess that Opportunity Peterborough will supply data something here about data and voting and so forth</p>
+    </div>
 </div>
 
 <div class="common-menu">
     <nav>
         <ul class="nav navbar-nav">
             <li><a href="/#/menu">Home</a></li>
+            <li><a href="/#/polls">All Polls</a></li>
+            <li><a href="/#/polls/past">Previous Polls</a></li>
             <!-- this is where other Breadcrumb-style nav buttons go -->
         </ul>
 

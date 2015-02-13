@@ -13,8 +13,5 @@ pollsApp.config(['$routeProvider', function($routeProvider){
     }).when('/polls/results/:pollId', {
         templateUrl: '/modules/polls/partials/result.html',
         controller: 'pollsVoteController'
-    }).when('/polls/past', {
-        templateUrl: '/modules/polls/partials/past.html',
-        controller: 'pollsVoteController'
     });
 }]);
