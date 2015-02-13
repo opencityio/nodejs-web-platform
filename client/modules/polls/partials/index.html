@@ -1,14 +1,5 @@
 <link rel="stylesheet" href="/components/metro-bootstrap/dist/css/metro-bootstrap.min.css">
 <style>
-  .header-bar {
-    background-image: url('/assets/polls-header.jpg');
-    background-size: 100% 100%;
-    margin-bottom: 1em;
-  }
-
-  .logo {
-    margin: 15px 0;
-  }
 
   .quote-box {
     padding: 50px;
@@ -43,17 +34,17 @@
     line-height: 80px;
   }
   .quote-box .poll-goto {
-      float: right;
-      background: #00d0fc;
-      color: #fff;
-      padding: 7px 15px;
-      text-decoration: none;
-      box-shadow: 1px 2px #57919d;
-      border-radius: 5px;
-      font-size: 30px;
+    float: right;
+    background: #00d0fc;
+    color: #fff;
+    padding: 7px 15px;
+    text-decoration: none;
+    box-shadow: 1px 2px #57919d;
+    border-radius: 5px;
+    font-size: 30px;
   }
   .quote-box .poll-goto:hover {
-      background-color: #00B0D6;
+    background-color: #00B0D6;
   }
 
   .poll-description {
@@ -70,10 +61,10 @@
   }
 
   .vote-notice {
-      margin-top: 70px;
-      margin-bottom: 80px;
-      display: block;
-      position: relative;
+    margin-top: 70px;
+    margin-bottom: 80px;
+    display: block;
+    position: relative;
   }
   .vote-notice p {
     text-align: center;
@@ -95,7 +86,7 @@
     box-shadow: 1px 4px #57919d;
   }
   .vote-notice button:hover {
-      background-color: #00B0D6;
+    background-color: #00B0D6;
   }
 
   .information {
@@ -110,17 +101,9 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
   }
-
 </style>
 
-<div class="header-bar col-lg-12">
-  <div class="hack-wrap">
-    <div class="logo col-lg-2">
-      <img class="img-responsive" src="/assets/logo.jpg" />
-    </div>
-  </div>
-</div>
-
+<div ng-include="'/partials/header.html'" ng-controller="headerController"></div>
 
 <div class="hack-wrap">
     <div class="poll" ng-repeat="poll in polls">
@@ -137,16 +120,9 @@
   </div>
 </div>
 
-<div class="common-menu col-lg-12" style="background-image: url('/assets/polls-header.jpg');" data-timeout="60">
-<nav>
-  <ul class="nav navbar-nav">
-    <li><a href="/#/menu"><i class="fa fa-home"></i> Menu</a></li>
-    <li><a href="/#/polls"><i class="fa fa-arrow-left"></i> Back to current poll</a></li>
-  </ul>
-  <ul class="nav navbar-nav navbar-right navbar-feedback">
-      <li class="pull-right"><a href="/"><img class="feedback-logo" src="/assets/btnLogo.jpg"/>Give us feedback</a></li>
-  </ul>
-</nav>
+
+
+<div ng-include="'/partials/footer.html'" ng-controller="footerController"></div>
 
 <!-- <div class="common-menu">
     <nav>
@@ -158,5 +134,5 @@
         <ul class="nav navbar-nav navbar-right navbar-feedback">
             <li class="pull-right"><a href="/">Give us feedback</a></li>
         </ul>
-    </nav>
-</div>-->
+    </nav>-->
+
