@@ -1,12 +1,5 @@
 <link rel="stylesheet" href="/components/metro-bootstrap/dist/css/metro-bootstrap.min.css">
 <link rel="stylesheet" href="/css/polls.css">
-<div class="header-bar col-lg-12">
-  <div class="hack-wrap">
-    <div class="logo col-lg-2">
-      <img class="img-responsive" src="/assets/logo.jpg" />
-    </div>
-  </div>
-</div>
 
 
 <div class="hack-wrap">
@@ -24,16 +17,9 @@
   </div>
 </div>
 
-<div class="common-menu col-lg-12" style="background-image: url('/assets/polls-header.jpg');" data-timeout="60">
-<nav>
-  <ul class="nav navbar-nav">
-    <li><a href="/#/menu"><i class="fa fa-home"></i> Menu</a></li>
-    <li><a href="/#/polls"><i class="fa fa-arrow-left"></i> Back to current poll</a></li>
-  </ul>
-  <ul class="nav navbar-nav navbar-right navbar-feedback">
-      <li class="pull-right"><a href="/"><img class="feedback-logo" src="/assets/btnLogo.jpg"/>Give us feedback</a></li>
-  </ul>
-</nav>
+
+
+<div ng-include="'/partials/footer.html'" ng-controller="footerController"></div>
 
 <!-- <div class="common-menu">
     <nav>
@@ -45,5 +31,5 @@
         <ul class="nav navbar-nav navbar-right navbar-feedback">
             <li class="pull-right"><a href="/">Give us feedback</a></li>
         </ul>
-    </nav>
-</div>-->
+    </nav>-->
+
