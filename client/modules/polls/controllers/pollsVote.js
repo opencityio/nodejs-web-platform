@@ -1,4 +1,14 @@
 pollsApp.controller('pollsVoteController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+
+    var timeouts = angular.element(document.querySelector('[data-timeout]'));
+    if (timeouts.length) {
+        angular.element(timeouts).addClass('ng-hide');
+        angular.element(timeouts).each(function(){
+            setTimeout(function(){
+                angular.element(this).show();
+            }, angular.element(this).data('timeout'));
+        });
+    }
     $scope.polldataurl = 'http://nodejs-citizenvote-platofrm.dev.opencity.io/';
 
 //    $http.get('http://nodejs-citizenvote-platofrm.dev.opencity.io').success(function(data) {
