@@ -105,6 +105,13 @@
 </div>
 </div>
 
+
+<div class="poll">
+    <h2> {{poll.name}} </h2>
+    <button ng-repeat="(key, value) in poll.options" type="button" class="btn btn-primary btn-lg" ng-click="sendPollData(poll.id, key)">{{value}}</button>
+
+    <div><a href="/#/polls/past">Previous Polls</a></div>
+</div>
 <div class="hack-wrap">
   <div class="col-lg-12">
     <div class="quote-box">
@@ -129,7 +136,7 @@
   </div>
 </div>
 
-<div class="common-menu col-lg-12" style="background-image: url('/assets/polls-header.jpg');">
+<div class="common-menu col-lg-12" style="background-image: url('/assets/polls-header.jpg');" data-timeout="60">
 <nav>
   <ul class="nav navbar-nav">
     <li><a href="/#/menu"><i class="fa fa-home"></i> Menu</a></li>

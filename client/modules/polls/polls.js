@@ -1,14 +1,20 @@
-var polls = angular.module('polls', ['ngRoute']);
+var pollsApp = angular.module('polls', ['ngRoute']);
 
-polls.config(['$routeProvider', function($routeProvider){
+pollsApp.config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/polls/', {
         templateUrl: '/modules/polls/partials/index.html',
         controller: 'pollsIndexController'
+    }).when('/polls/vote/:pollId', {
+        templateUrl: '/modules/polls/partials/vote.html',
+        controller: 'pollsVoteController'
+    }).when('/polls/results', {
+        templateUrl: '/modules/polls/partials/results.html',
+        controller: 'pollsVoteController'
+    }).when('/polls/results/:pollId', {
+        templateUrl: '/modules/polls/partials/result.html',
+        controller: 'pollsVoteController'
     }).when('/polls/past', {
         templateUrl: '/modules/polls/partials/past.html',
-        controller: 'pollsIndexController'
-    }).when('/polls/voted', {
-        templateUrl: '/modules/polls/partials/voted.html',
-        controller: 'pollsIndexController'
+        controller: 'pollsVoteController'
     });
 }]);

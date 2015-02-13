@@ -1,56 +1,43 @@
 
       <style type="text/css">
+          .poll {
+              margin-bottom: 30px;
+          }
           .poll-result {
               text-align: center;
               padding: 3px;
-              width: 35%;
-              margin: 0 7%;
-              position: absolute;
-              bottom: 0;
+              margin: 5px 0;
           }
           .poll-fill {
+              padding: 2px 5px;
+              text-align: left;
               display: block;
               background: cornflowerblue;
-              position: absolute;
-              bottom: 0;
               height: 100%;
-              width: 100%;;
-          }
-          .poll-number {
-              position: relative;
-              top: -25px;
-          }
-          .poll-right {
-              right: 0;
           }
           .chart {
-              height: 300px;
               position: relative;
           }
       </style>
       <link rel="stylesheet" href="/components/metro-bootstrap/dist/css/metro-bootstrap.min.css">
 
-      <div class="hack-wrap">
-    <div class="poll">
-        <h2>Voted Poll Title</h2>
-        <h3>Results</h3>
-        <h2 class="text-center"> {{poll.name}} </h2>
+<div class="hack-wrap">
+    <h1>Poll Results</h1>
+    <div class="poll" ng-repeat="(key, poll) in polls">
+        <blockquote> {{poll.name}} </blockquote>
         <div class="chart">
-            <div ng-repeat="(key, value) in poll.options" class="poll-result" ng-style="pollResultsHeight(poll.results, key)" ng-class="{'poll-right': $last}">
-                <span class="poll-number">{{poll.results[key]}}</span>
-                <span class="poll-fill">{{value}}</span>
+            <div ng-repeat="(key, value) in poll.options" class="poll-result" ng-style="pollResultsPercentage(poll.results, key)">
+                <span class="poll-fill">{{value}}: <span class="poll-number">{{poll.results[key]}}</span></span>
             </div>
         </div>
-
-
     </div>
-          </div>
+</div>
 
       <div class="common-menu">
           <nav>
               <ul class="nav navbar-nav">
                   <li><a href="/#/menu">Home</a></li>
-                  <li><a href="/#/polls">Back to Current Poll</a></li>
+                  <li><a href="/#/polls">Back to Polls</a></li>
                   <!-- this is where other Breadcrumb-style nav buttons go -->
               </ul>
 
