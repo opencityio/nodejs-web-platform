@@ -4,14 +4,10 @@
     .poll {
         padding: 20px 0;
     }
-    .poll-option-wrap {
-        width: 100%;
-        display: table;
-    }
-    .poll-option-wrap .btn-wrap {
-        display: table-cell;
-    }
 
+    .poll-option-wrap .btn-wrap {
+        margin: 20px 0;
+    }
     .poll-option-wrap .btn-wrap button.btn {
         width: 80%;
         margin: 0 auto;
@@ -22,12 +18,15 @@
 <div class="hack-wrap">
     <h1>Citizen Vote</h1>
 
-    <ul>
-        <li class="poll" ng-repeat="(key, poll) in polls">
-            <blockquote> {{poll.name}} </blockquote>
-            <a href="/#/polls/vote/{{poll.id}}" class="poll-gotozx">Vote</a>
-        </li>
-    </ul>
+    <div class="poll">
+        <blockquote> {{poll.name}} </blockquote>
+        <div class="poll-option-wrap">
+            <div class="btn-wrap" ng-repeat="(key, value) in poll.options">
+                <button type="button" class="btn btn-primary btn-lg" ng-click="sendPollData(poll.id, key)">{{value}}</button>
+            </div>
+        </div>
+    </div>
+    <div><a href="/#/polls">All Polls</a></div>
     <div><a href="/#/polls/past">Previous Polls</a></div>
 </div>
 
