@@ -13,12 +13,14 @@
         <div class="poll">
             <h2>Voted Poll Title</h2>
             <h3>Results</h3>
-            <blockquote> {{poll.name}} </blockquote>
-            <div class="chart">
-                <div ng-repeat="(key, value) in poll.options" class="poll-result" ng-style="pollResultsPercentage(poll.results, key)">
-                    <span class="poll-fill">{{value}}: <span class="poll-number">{{poll.results[key]}}</span></span>
-                </div>
+            <div class="quote-box">
+                <p class="col-lg-offset-1">{{ poll.name }}</p>
             </div>
+            <div class="chart">
+            <div ng-repeat="(key, value) in poll.options" class="poll-result" ng-style="pollResultsPercentage(poll.results, key)">
+                <span class="poll-fill">{{value}}: <span class="poll-number">{{poll.results[key]}}</span></span>
+            </div>
+        </div>
         </div>
       </div>
 
