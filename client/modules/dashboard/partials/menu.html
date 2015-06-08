@@ -9,10 +9,21 @@
 		padding: 0 !important;
 	}
 
+	.menu-title {
+		color: #ffffff;
+		font-size: 85px;
+		font-weight: bold;
+		margin-right: 30px;
+	}
+
 	.tile {
 		margin: 0 !important;
 		border: 0 !important;
-		padding: 0 !important;
+		padding: 125px 0;
+	}
+
+	.tile h1 {
+		font-weight: bold;
 	}
 
 	.tile-purple {
@@ -69,13 +80,25 @@
 		height: 100%;
 	}
 
+	.header-bar {
+		background: url('/assets/home-header-bar.jpg');
+		background-size: cover;
+		height: 169px;
+		box-shadow: 1px 2px 4px black;
+		z-index: 9999;
+	}
 </style>
 
+<div class="header-bar col col-xs-12">
+	<div class="pull-right">
+		<h1 class="menu-title">Get Started</h1>
+	</div>
+</div>
 
 <div class="col col-xs-6">
 	<div class="thumbnail tile tile-medium tile-purple">
 		<a href="#/polls/" >
-			<img src="/assets/thumb_1.png" width="100" alt="">
+			<img src="/assets/thumbup_fixed.png" width="100" alt="">
 			<h1>Citizen Vote</h1>
 		</a>
 	</div>
@@ -85,7 +108,7 @@
 <div class="col col-xs-6">
 	<div class="thumbnail tile tile-medium tile-green">
 		<a href="#/whatson" >
-			<img src="/assets/q_mark_1.png" width="100" alt="">
+			<img src="/assets/whatson.png" width="100" alt="">
 			<h1>What's On?</h1>
 		</a>
 	</div>
@@ -95,7 +118,7 @@
 <div class="col col-xs-6">
 	<div class="thumbnail tile tile-medium tile-red">
 		<a href="#/feedback" >
-			<img src="/assets/pallete_1.png" width="100" alt="">
+			<img src="/assets/feedback.png" width="100" alt="">
 			<h1>Feedback</h1>
 		</a>
 	</div>
@@ -105,7 +128,7 @@
 <div class="col col-xs-6">
 	<div class="thumbnail tile tile-medium tile-darkgreen">
 		<a href="#/treasurehunt/" >
-			<img src="/assets/map_1.png" width="100" alt="">
+			<img src="/assets/treasurehunt.png" width="100" alt="">
 			<h1>Treasure Hunt</h1>
 		</a>
 	</div>
